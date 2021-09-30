@@ -70,7 +70,7 @@ This should run on a GPU if there is one available and on the CPU otherwise.
 To verify that everything is working correctly we provide example reconstructions of a text image and a "sanity check" image. Both were held back and not seen by the network during training.
 
 ![Example text reconstructions for all blur levels][example_img_text]
-![Example image reconstructions for all blur levels][example_img_san]
+![Example image reconstructions for all blur levels](./san_example.png)
 
 ## Acknowledgements
 
@@ -88,8 +88,3 @@ The "sanity check" images are  taken from  <https://synthia-dataset.net/>.
 [4] Kang, Eunhee, Junhong Min, and Jong Chul Ye. "A deep convolutional neural network using directional wavelets for low‐dose X‐ray CT reconstruction." Medical physics 44.10 (2017): e360-e375.
 
 [5] Genzel, Martin, Jan Macdonald, and Maximilian März. "AAPM DL-Sparse-View CT Challenge Submission Report: Designing an Iterative Network for Fanbeam-CT with Unknown Geometry." arXiv preprint arXiv:2106.00280 (2021).
-
-
-
-[example_img_text]:(image/example_text.png)
-[example_img_sanity]:(san_example.png)
