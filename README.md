@@ -56,9 +56,9 @@ conda activate hdc_tub
 ```
 - To test if the installation and setup was successful run
 ```console
-python demo.py
+python demo.py <output-path>
 ```
-You should see ...
+This should generate results comparable to the example text images shown below.
 - For the main evaluation run
 ```console
 python main.py <input-path> <output-path> <blur-step>
