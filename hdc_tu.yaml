@@ -1,0 +1,17 @@
+name: hdc
+channels:
+  - defaults
+dependencies:
+  - python=3.8.3
+  - torchvision==0.7.0
+  - pytorch==1.6.0
+  - cudatoolkit=10.2
+  - pandas
+  - tqdm
+  - matplotlib
+  - requests
+  - pytesseract=0.3.7
+  - fuzzywuzzy=0.18.0
+  - tesseract
+  - git
+prefix: /homes2/math/trippe/.conda/envs/hdc
