@@ -3,6 +3,7 @@ channels:
   - pytorch
   - defaults
   - conda-forge
+  - photosynthesis-team
 dependencies:
   - python=3.8.3
   - torchvision=0.7.0
@@ -16,6 +17,5 @@ dependencies:
   - pytesseract=0.3.7
   - fuzzywuzzy=0.18.0
   - tesseract=4.1.1
-  - pip:
-    - piq==0.5.5
+  - piq==0.5.5
 prefix: /path/to/.conda/envs/hdc_tub
