@@ -8,7 +8,7 @@
 - Maximilian März, Technische Universität Berlin, Institut für Mathematik, Berlin, Germany
 
 ## Method Description
-Our approach to the challenge is to train **end-to-end** deblurring **neural networks**, i.e., in the evaluation phase the deblurred images are directly estimated by the networks without the need of solving an optimization problem.
+Our approach to the **Helsinki Deblur Challenge 2021** (see: https://www.fips.fi/HDC2021.php#anchor1) is to train **end-to-end** deblurring **neural networks**, i.e., in the evaluation phase the deblurred images are directly estimated by the networks without the need of solving an optimization problem.
 
 The network architecture is a slight modification (more down- and up-sampling steps, GroupNormalization [[1]](#References), more aggressive sub-sampling for an increased field-of-view) of the standard **U-Net** [[2]](#References). This model was originally proposed for image segmentation and now also forms a prominent backbone for data-driven reconstruction schemes for imaging inverse problems [[3,4,5]](#References).
 
