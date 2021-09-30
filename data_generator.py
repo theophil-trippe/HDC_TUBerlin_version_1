@@ -2,7 +2,7 @@ import os
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-import cv2
+# import cv2
 import string
 import random
 from config import VERDANA_PATH, TIMES_PATH, FONT_PATHS
@@ -45,18 +45,18 @@ def generate_background(size=(300, 200), intensity=220):
     """
     return Image.new('L', size, color=intensity)
 
-def translate_cv(cv_img, x_shift, y_shift):
-    rows, cols = cv_img.shape
-    M = np.float32([[1, 0, x_shift],
-                    [0, 1, y_shift]])
-    out = cv2.warpAffine(cv_img, M, (cols,rows))
-    return out
-
-def rotate_image(image, angle):
-  image_center = tuple(np.array(image.shape[1::-1]) / 2)
-  rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
-  result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
-  return result
+# def translate_cv(cv_img, x_shift, y_shift):
+#     rows, cols = cv_img.shape
+#     M = np.float32([[1, 0, x_shift],
+#                     [0, 1, y_shift]])
+#     out = cv2.warpAffine(cv_img, M, (cols,rows))
+#     return out
+#
+# def rotate_image(image, angle):
+#   image_center = tuple(np.array(image.shape[1::-1]) / 2)
+#   rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
+#   result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
+#   return result
 
 def add_text(img, text=['Example'], positions=[(0, 0)], font_path=VERDANA_PATH, font_size=35, font_colour=0):
     """
@@ -174,4 +174,3 @@ def add_relative_noise(img_tens, mean=0, variance=0, ):
     else:
         abs_noise = torch.tensor(np.random.normal(mean + 1, variance ** 0.5, dims))
     return img_tens * abs_noise
-

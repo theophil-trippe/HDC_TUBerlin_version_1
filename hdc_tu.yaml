@@ -16,4 +16,6 @@ dependencies:
   - pytesseract=0.3.7
   - fuzzywuzzy=0.18.0
   - tesseract=4.1.1
+  - pip:
+    - piq==0.5.5
 prefix: /path/to/.conda/envs/hdc_tub
