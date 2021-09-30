@@ -9,16 +9,12 @@ from os.path import join
 parser = argparse.ArgumentParser(description='Demo run, deblurring one image test image for each step')
 parser.add_argument('save_path', type=str,
                     help='(string) Folder where the output image is located')
-parser.add_argument('version', type=int,
-                    help='(int) must be 1 or 2, specifying the version to be test')
 
 args = parser.parse_args()
 save_path = args.save_path
-version = args.version
-
 
 def checkpoint_path(step):
-    return join(WEIGHTS_PATH, "step_{:02d}".format(step), "UNet_weights_step_{:02d}_v{}.pt".format(step, version))
+    return join(WEIGHTS_PATH, "step_{:02d}".format(step), "UNet_weights_step_{:02d}_v1.pt".format(step))
 
 rows = []
 for step in range(20):
