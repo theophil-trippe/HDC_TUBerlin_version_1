@@ -70,7 +70,12 @@ This should run on a GPU if there is one available and on the CPU otherwise.
 To verify that everything is working correctly we provide example reconstructions of a text image and a "sanity check" image. Both were held back and not seen by the network during training.
 
 ![Example text reconstructions for all blur levels][example_img_text]
-![Example image reconstructions for all blur levels][example_img_sanity]
+![Example image reconstructions for all blur levels][example_img_san]
+
+## Acknowledgements
+
+Our implementation of the U-Net is based on and adapted from <https://github.com/mateuszbuda/brain-segmentation-pytorch/>.  
+The "sanity check" images are  taken from  <https://synthia-dataset.net/>.
 
 ## References
 
@@ -87,4 +92,4 @@ To verify that everything is working correctly we provide example reconstruction
 
 
 [example_img_text]:(image/example_text.png)
-[example_img_sanity]:(image/example_sanity.png)
+[example_img_sanity]:(san_example.png)
