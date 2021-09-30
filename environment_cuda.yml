@@ -1,0 +1,21 @@
+name: hdc_tub
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+  - photosynthesis-team
+dependencies:
+  - python=3.8.3
+  - torchvision=0.7.0
+  - pytorch==1.6.0
+  - cudatoolkit=10.2.89
+  - pandas=1.2.5
+  - tqdm=4.61.2
+  - numpy=1.20.2
+  - pillow=8.3.1
+  - matplotlib=3.3.4
+  - pytesseract=0.3.7
+  - fuzzywuzzy=0.18.0
+  - tesseract=4.1.1
+  - piq==0.5.5
+prefix: /path/to/.conda/envs/hdc_tub

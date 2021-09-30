@@ -18,13 +18,13 @@ A canonical way to address this aspect is an integration of **model-based** know
 (a) In our experience, unrolled networks typically only show a clear advantage for inverse problems that involve a domain change (e.g. images -> sinograms in CT).
 (b) In our experience, unrolled networks typically only outperform if a rather precise forward model is known.
 
-Still following the philosophy of incorporating model-based knowledge, we instead pursue the following strategy: 
-(a) We estimate the **forward model** from the given training data. A key component is to model **lens distortion** effects in addition to blurring. 
+Still following the philosophy of incorporating model-based knowledge, we instead pursue the following strategy:
+(a) We estimate the **forward model** from the given training data. A key component is to model **lens distortion** effects in addition to blurring.
 (b) We use this model to **simulate** additional training data (text & other images).
 
-This approach has three **advantages**: 
-(a) Including other images in the simulated training data allows us to pass the challenge "sanity check". 
-(b) Increasing the text training data beyond the provided 100 examples per font per blur level improves the final performance of the networks. 
+This approach has three **advantages**:
+(a) Including other images in the simulated training data allows us to pass the challenge "sanity check".
+(b) Increasing the text training data beyond the provided 100 examples per font per blur level improves the final performance of the networks.
 (c) Accounting for the radial distortion renders the problem approximately translation invariant, which is beneficial for a subsequent processing by the U-Nets.
 
 In more detail, our training proceeds in **three phases**:  
@@ -37,17 +37,22 @@ For all blur levels we use the same parametric model of the forward operator and
 
 ## Installation & Setup
 
-- We have included the yaml file `hdc.yml` from which our Conda environment can be reconstructed using the command
+- We have included two YAML files `environment_cuda.yml` and `environment_nocuda.yml` from which our Conda environment can be reconstructed using the commands
 ```console
-conda env create -f hdc.yml
+conda env create -f environment_cuda.yml
 ```
+or
+```console
+conda env create -f environment_nocuda.yml
+```
+respectively. The former is intended for a use with Cuda (GPU support), the latter for a use without Cuda (no GPU support).
 - Download the network weights from <https://tubcloud.tu-berlin.de/s/skgGxG2dPXLNFHy> and place them in the `HDC_weights` directory (alternatively you can specify the `WEIGHTS_PATH` variable in `config.py` to point to another directory (relative or absolute path))
 
 ## Usage
 
 - Activate the Conda environment via
 ```console
-conda activate hdc
+conda activate hdc_tub
 ```
 - To test if the installation and setup was successful run
 ```console
