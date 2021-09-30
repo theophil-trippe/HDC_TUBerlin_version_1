@@ -15,7 +15,7 @@ The network architecture is a slight modification (more down- and up-sampling st
 Such powerful network architectures may adapt very well to specific data, but possibly "overfit" to the provided text images of the challenge (i.e. the network would always output text regardless of the input image). Such a behavior would violate the goal of the challenge, which is to identify general purpose methods capable of deblurring also other types of images.
 
 A canonical way to address this aspect is an integration of **model-based** knowledge into the reconstruction pipeline, e.g., in the form of **unrolled networks**. We did not pursue this strategy for two reasons:
-(a) In our experience, unrolled networks typically show a clear advantage for inverse problems that involve a domain change (e.g. images -> sinograms in CT).
+(a) In our experience, unrolled networks typically show a clear advantage for inverse problems that involve a domain change (e.g. images -> sinograms in CT), which is not the case for deblurring.
 (b) In our experience, unrolled networks typically outperform if a good enough forward model is known.
 
 Still following the philosophy of incorporating model-based knowledge, we instead pursue the following strategy: 
