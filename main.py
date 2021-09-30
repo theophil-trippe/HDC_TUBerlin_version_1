@@ -126,42 +126,6 @@ def show_plot_with_OCR(image_path, text_targ_path, *deblurrer):
     fig.show()
 
 
-def console_callable_main():
-    parser = argparse.ArgumentParser(description='Deblur all images in the given directory')
-    parser.add_argument('input_folder', type=str,
-                        help='(string) Folder where the input image files are located')
-    parser.add_argument('output_folder', type=str,
-                        help='(string) Folder where the input image files are located')
-    parser.add_argument('step', type=int,
-                        help='(int) Blur category number. Values between 0 and 19')
-    args = parser.parse_args()
-    input_folder = args.input_folder
-    output_folder = args.output_folder
-    step = args.step
-    files = os.listdir(input_folder)
-    # todo: specify checkpoint location, depending on config import
-    checkpoint_path_1 = ''
-    checkpoint_path_2 = ''
-
-
-    if torch.cuda.is_available():
-        dev = torch.device("cuda:0")
-        torch.cuda.set_device(0)
-    else:
-        dev = torch.device("cpu")
-
-    deb_1 = get_deblurrer(step, checkpoint_path_1, device=dev)
-    deb_2 = get_deblurrer(step, checkpoint_path_2, device=dev)
-    for file in files:
-        # todo: adjust deb_1 deb_2 etc depending on version
-        save_png_result(file, output_folder, deb_1, deb_2)
-    pass
-
-
-
-
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Deblur all images in the given directory')
     parser.add_argument('input_folder', type=str,
@@ -178,12 +142,9 @@ if __name__ == "__main__":
 
     # todo: specify checkpoint location, depending on config import
 
-    checkpoint_path_1 = '/fast/trippe/HDC_Code/HDC_Code_Final/results/Final/Pretrain_0_1500_75/FT_FT_178_40_5/step_{:02d}/model_checkpoint_epoch313.tar'
-    checkpoint_path_2 = ''
+    checkpoint_path_1 = os.path.join(WEIGHTS_PATH, "step_{:02d}".format(step), "UNet_checkpoint_step_{:02d}_v1.tar")
 
     deb_1 = get_deblurrer(step, checkpoint_path_1, device=device)
-    # deb_2 = get_deblurrer(step, checkpoint_path_2, device=dev)
     for i, file in enumerate(files):
-        # todo: adjust deb_1 deb_2 etc depending on version
         save_png_result(os.path.join(input_folder, file), output_folder, deb_1)
         print("file " + str(i + 1) + "/" + str(len(files)) + " deblurred on " + str_dev)
