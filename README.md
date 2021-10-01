@@ -46,7 +46,7 @@ or
 conda env create -f environment_nocuda.yml
 ```
 respectively. The former is intended for a use with Cuda (GPU support), the latter for a use without Cuda (no GPU support).
-- Download the network weights from <https://tubcloud.tu-berlin.de/s/skgGxG2dPXLNFHy> and place them in the `HDC_weights` directory (alternatively you can specify the `WEIGHTS_PATH` variable in `config.py` to point to another directory (relative or absolute path))
+- Download the network weights from <https://tubcloud.tu-berlin.de/s/skgGxG2dPXLNFHy> (<https://solisservices-my.sharepoint.com/:f:/g/personal/m_genzel_uu_nl/Egsk5jbxXuJLrTgB9OAIkmsB5bRm38Mznnghuii66yA_bQ> for a faster host of the data) and place them in the `HDC_weights` directory (alternatively you can specify the `WEIGHTS_PATH` variable in `config.py` to point to another directory (relative or absolute path))
 
 ## Usage
 
